@@ -24,7 +24,7 @@ const techSkills = [
 ];
 
 
-const ProjectSection = React.forwardRef<HTMLDivElement>((props, ref) => {
+const ProjectSection = React.forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <section ref={ref} className={styles.projectSection}>
       <h2 className={styles.mainTitle}>Proyecto Principal: Estud-IA</h2>
