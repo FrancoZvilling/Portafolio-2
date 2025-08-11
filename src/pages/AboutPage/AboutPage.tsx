@@ -1,6 +1,3 @@
-// src/pages/AboutPage/AboutPage.tsx (VERSIÓN 100% COMPLETA Y VERIFICADA)
-
-import React from 'react';
 import styles from './AboutPage.module.css';
 import { FaEnvelope, FaPhone, FaDownload, FaLink, FaBriefcase } from 'react-icons/fa';
 
