@@ -1,0 +1,155 @@
+/* src/pages/AboutPage/AboutPage.module.css (NUEVO DISEÑO INTEGRADO) */
+
+.aboutPage {
+  /* Fondo azul cohesivo con el resto del sitio */
+  background-color: var(--color-azul-secundario);
+  padding: 80px 1rem 2rem 1rem;
+  min-height: 100vh;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+/* El estilo de la tarjeta principal que contendrá cada sección */
+.card {
+  background-color: white;
+  color: #333;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.mainTitle {
+  font-family: var(--font-titulos);
+  font-size: 2.2rem;
+  color: var(--color-azul-superficie);
+  margin-bottom: 1.5rem;
+  border-bottom: 4px solid var(--acento-menta-fresca);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Título para secciones sin tarjeta (como 'Mis Proyectos') */
+.standaloneTitle {
+  color: white; /* El texto va sobre el fondo azul */
+  border-bottom-color: var(--acento-menta-fresca);
+  margin-left: 1rem; /* Pequeño margen para alinearlo */
+}
+
+
+/* --- Sobre Mí y Contacto (comparten estilos) --- */
+.card h2 { font-size: 1.5rem; color: #111; }
+.dob { color: #777; font-size: 0.9rem; display: block; margin-bottom: 1rem; }
+.card p { line-height: 1.7; font-size: 1.1rem; }
+.contactContent { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.contactItem { display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; }
+.contactItem svg { color: var(--color-azul-primario); }
+.cvButton {
+  background-color: var(--color-azul-primario);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cvButton:hover { background-color: var(--color-azul-superficie); transform: translateY(-3px); }
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  text-decoration: none; /* Quita el subrayado */
+  color: #333; /* Hereda el color de texto normal */
+  transition: color 0.2s ease;
+}
+
+.contactLink:hover {
+  color: var(--color-azul-primario); /* Al pasar el ratón, se pone azul */
+}
+
+
+/* --- Proyectos --- */
+.projectsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.projectCard {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.projectCard h3 { color: var(--color-azul-primario); font-size: 1.5rem; }
+.projectCard h4 { font-size: 0.9rem; color: #555; margin-bottom: 1rem; font-style: italic; }
+.techList { list-style: '✔ '; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1; color: #333; }
+.projectLink {
+  background-color: var(--acento-rosa-coral);
+  color: black;
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+.projectLink:hover { opacity: 0.8; }
+
+/* Estilo profesional para la experiencia, sin estrella */
+.professionalExperience {
+  font-weight: 600;
+  color: #0B056B;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+/* --- Educación --- */
+.card h3 { color: #111; margin-top: 2rem; }
+.diplomaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.diplomaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto asegura que la imagen cubra el espacio sin deformarse */
+  border-radius: 8px;
+  background-color: #e9ecef; /* Un color de fondo mientras carga la imagen */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* --- Habilidades --- */
+.skillsContainer { display: flex; flex-direction: column; gap: 1.5rem; }
+.skillCategory h5 { font-size: 1.2rem; color: #333; }
+.skillsGrid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.skillTag {
+  background-color: var(--color-azul-superficie);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* --- Media Queries para Móvil --- */
+@media(max-width: 768px){
+  .contentWrapper { gap: 1.5rem; }
+  .mainTitle { font-size: 1.8rem; }
+  .standaloneTitle { margin-left: 0; }
+  .projectsGrid { grid-template-columns: 1fr; }
+}

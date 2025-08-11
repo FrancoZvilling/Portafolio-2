@@ -1,0 +1,84 @@
+/* src/components/Navbar/Navbar.module.css (VERSIÓN FINAL CON MÓVIL) */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 2rem; /* Mantenemos el padding para escritorio */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(11, 5, 107, 0.8);
+  color: var(--color-texto-secundario);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-azul-secundario);
+  z-index: 1000;
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Estilo para el contenedor del enlace del icono */
+.navLink {
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  transform: scale(1.1);
+  color: var(--acento-amarillo-solar); /* Cambiamos a amarillo para consistencia */
+}
+
+/* Estilo para los iconos, ya sea texto (emoji) o de react-icons */
+.navIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Estilo para el texto de ayuda */
+.hintText {
+  color: var(--color-texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease; /* Añadimos una transición para que desaparezca suavemente */
+}
+
+/* Estilo para la flecha */
+.hintArrow {
+  color: var(--acento-amarillo-solar);
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease; /* Añadimos una transición para que desaparezca suavemente */
+}
+
+.navbarInfo {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--color-texto-secundario);
+  font-family: var(--font-textos);
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem; /* Reducimos el padding de 2rem a 1rem */
+  }
+
+  /* 
+    ¡LA MAGIA OCURRE AQUÍ!
+    Ocultamos el texto y la flecha en pantallas pequeñas.
+  */
+  .hintText,
+  .hintArrow {
+    display: none;
+  }
+}

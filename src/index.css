@@ -1,0 +1,46 @@
+/* src/index.css */
+
+/* 1. Importación de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* 2. Definición de la paleta de colores y fuentes como variables globales */
+:root {
+  /* Paleta de Colores "Espectro Vibrante" */
+  --color-azul-primario: #140aa5;
+  --color-azul-secundario: #1F269A;
+  --color-azul-superficie: #0B056B;
+
+  --color-texto-principal: #F0F4F8;
+  --color-texto-secundario: #B0B8D9;
+
+  --acento-rosa-coral: #FF80AB;
+  --acento-menta-fresca: #40E0D0;
+  --acento-amarillo-solar: #FFD700;
+
+  /* Tipografías */
+  --font-titulos: 'Space Grotesk', sans-serif;
+  --font-textos: 'Inter', sans-serif;
+}
+
+/* 3. Reseteo y Estilos Base Globales */
+
+/* Reseteo básico para un comportamiento consistente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos base para toda la página */
+body {
+  font-family: var(--font-textos);
+  background-color: var(--color-azul-primario); /* Usamos el primario como fondo por defecto */
+  color: var(--color-texto-principal); /* El texto principal por defecto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos base para los títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+}

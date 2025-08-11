@@ -1,0 +1,144 @@
+/* src/components/ProjectSection/ProjectSection.module.css (VERSIÓN FINAL LUMINOSA) */
+
+/* 1. Fondo de la sección a blanco */
+.projectSection {
+  padding: 6rem 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* 2. Títulos principales a negro */
+.mainTitle, .techTitle {
+  font-family: var(--font-titulos);
+  color: black;
+  text-align: center;
+}
+.mainTitle { font-size: 2.5rem; }
+.techTitle { font-size: 2rem; }
+
+.topContainer {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.videoContainer { flex: 1.2; }
+.videoPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #F0F4F8; /* Un gris muy claro para el fondo del video */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 100px;
+  border: 2px solid #E8ECF1; /* Un borde sutil que combina con el tema claro */
+}
+.playIcon {
+  font-size: 4rem;
+  color: #B0B8D9;
+}
+
+/* 3. Texto de la descripción y título verde menta */
+.descriptionContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #333333; /* Texto principal en un negro suave (#333) */
+}
+.descriptionContainer h3 {
+  font-family: var(--font-titulos);
+  color: var(--acento-menta-fresca); /* ¡Mantenemos el verde menta que te gustó! */
+  font-size: 1.5rem;
+}
+.descriptionContainer p { line-height: 1.6; }
+
+.bottomContainer {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 4. Estilo de las "tarjetas" de categorías para el tema claro */
+.skillCategory {
+  background-color: var(--acento-menta-fresca);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--acento-menta-fresca); /* Borde del mismo color para un look limpio */
+}
+
+/* 2. El título de la categoría (h4) necesita un color oscuro para contrastar */
+.skillCategory h4 {
+  font-family: var(--font-textos);
+  font-weight: 700;
+  color: var(--color-azul-superficie); /* Usamos nuestro azul más oscuro para una lectura perfecta */
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* 3. Las etiquetas de habilidad ahora serán blancas para resaltar sobre el verde */
+.skillTag {
+  background-color: rgba(255, 255, 255, 0.9); /* Un blanco semi-transparente muy elegante */
+  color: #333333; /* Texto oscuro para la etiqueta */
+  font-family: var(--font-textos);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* 4. Mantenemos el hover amarillo que crea un contraste de color vibrante */
+.skillTag:hover {
+  color: #000000;
+  background-color: var(--acento-amarillo-solar);
+  transform: translateY(-2px) scale(1.05); /* Le añadimos un poco de zoom */
+  font-weight: 600;
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+  /* Apilamos el video y la descripción */
+  .topContainer {
+    flex-direction: column;
+  }
+  
+  /* El video ya no debe ser "pegajoso" en móvil, o tapará contenido */
+  .videoPlaceholder {
+    position: relative; /* Lo devolvemos a su flujo normal */
+    top: 0;
+  }
+
+  /* Ajustamos el espaciado y los tamaños de fuente de la sección */
+  .projectSection {
+    padding: 4rem 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+  
+  .techTitle {
+    font-size: 1.5rem;
+  }
+
+  .descriptionContainer {
+    text-align: center; /* Centramos el texto de la descripción */
+  }
+}

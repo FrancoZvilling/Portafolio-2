@@ -1,0 +1,128 @@
+/* src/components/HeroSection/HeroSection.module.css (VERSIÓN MENTA FRESCA) */
+
+/* 1. Establecemos el nuevo fondo de la sección */
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 2rem;
+  background-color: var(--acento-menta-fresca);
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 2. Cambiamos el texto a un color oscuro para un contraste perfecto */
+.heroText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-titulos);
+  font-size: 3.5rem;
+  color: var(--color-azul-superficie); /* Usamos nuestro azul más oscuro */
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-family: var(--font-textos);
+  font-size: 1.1rem;
+  color: #0B056B; /* También el azul oscuro para el subtítulo */
+  opacity: 0.8; /* Le damos una ligera opacidad para crear jerarquía */
+  max-width: 500px;
+}
+
+/* 3. Rediseñamos el botón para que sea el complemento perfecto del fondo */
+.ctaButton {
+  background-color: var(--color-azul-superficie); /* Fondo azul oscuro */
+  color: var(--color-texto-principal); /* Texto claro */
+  font-family: var(--font-textos);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-azul-primario); /* Al pasar el ratón, se vuelve del azul más brillante */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(11, 5, 107, 0.4);
+}
+
+/* 4. Adaptamos el video para el nuevo fondo claro */
+.heroVideo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(255, 255, 255, 0.6); /* Un blanco translúcido y elegante */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+
+.playIcon {
+  font-size: 4rem;
+  color: var(--color-azul-superficie); /* El icono de play también oscuro */
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+  /* Hacemos que el contenedor principal sea vertical */
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  /* Reducimos el tamaño del título para que quepa bien */
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  /* Centramos el contenido de la columna de texto */
+  .heroText {
+    align-items: center; 
+  }
+
+  /* 
+    CORRECCIÓN 1: Forzamos el botón a centrarse, anulando su estilo de escritorio.
+  */
+  .ctaButton {
+    align-self: center;
+  }
+
+  /* 
+    CORRECCIÓN 2: Nos aseguramos de que el contenedor del video ocupe el 100% del ancho.
+  */
+  .heroVideo {
+    width: 100%;
+  }
+
+  /* Reducimos el espaciado general de la sección */
+  .heroSection {
+    padding: 4rem 1rem; /* Añadimos más padding vertical para que respire */
+  }
+}
