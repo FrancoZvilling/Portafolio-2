@@ -1,0 +1,18 @@
+/* src/components/VideoPlayer/VideoPlayer.module.css */
+
+.playerWrapper {
+  /* Esto crea un contenedor que mantiene la proporción 16:9 */
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 9 / 16 = 0.5625 */
+  border-radius: 12px; /* Redondeamos las esquinas del contenedor */
+  overflow: hidden;    /* Escondemos lo que se salga del borde redondeado */
+  background-color: black; /* Fondo negro mientras carga */
+}
+
+.reactPlayer {
+  /* Esto hace que el video ocupe el 100% del contenedor padre */
+  position: absolute;
+  top: 0;
+  left: 0;
+}

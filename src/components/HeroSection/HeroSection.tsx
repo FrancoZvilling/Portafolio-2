@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './HeroSection.module.css';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 // 1. Definimos que el componente recibirá una prop llamada 'onButtonClick'
 type HeroSectionProps = {
@@ -17,8 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onButtonClick }) => {
             Bienvenidos a mi portafolio web
           </h1>
           <p className={styles.heroSubtitle}>
-            Soy un desarrollador Full-Stack apasionado por crear experiencias 
-            de usuario memorables. Explora mi trabajo y conoce mi proyecto principal.
+            Soy un desarrollador Full-Stack apasionado por la tecnología y por crear mundos virtuales. Explora mi trabajo y conoce mi proyecto principal.
           </p>
           {/* 2. Añadimos el evento onClick al botón */}
           <button className={styles.ctaButton} onClick={onButtonClick}>
@@ -26,9 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onButtonClick }) => {
           </button>
         </div>
         <div className={styles.heroVideo}>
-          <div className={styles.videoPlaceholder}>
-            <span className={styles.playIcon}>▶</span>
-          </div>
+          <VideoPlayer url="https://www.youtube.com/watch?v=gEJNnRX0eY8" />
         </div>
       </div>
     </section>

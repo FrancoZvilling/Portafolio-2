@@ -67,7 +67,11 @@ const AboutPage = () => {
               <FaPhone /> <span>+543541315119</span>
             </a>
             <div className={styles.contactItem}><FaEnvelope /> <span>francozvilling-programador@hotmail.com</span></div>
-            <a href="/cv.pdf" download className={styles.cvButton}>
+            <a
+              href="/CV-FrancoZvilling-2025.pdf"
+              download="CV - Franco Zvilling.pdf"
+              className={styles.cvButton}
+            >
               <FaDownload /> Descargar mi CV
             </a>
           </div>

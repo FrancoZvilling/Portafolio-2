@@ -1,6 +1,8 @@
 // src/components/ProjectSection/ProjectSection.tsx (CÓDIGO CORREGIDO)
 import React from 'react'; // Necesitamos React aquí por el forwardRef
 import styles from './ProjectSection.module.css';
+import { FaLink } from 'react-icons/fa';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 const techSkills = [
   { category: 'Lenguajes y Frameworks', skills: ['JavaScript (ES6+)', 'React.js', 'HTML5', 'CSS3'] },
@@ -15,15 +17,13 @@ const ProjectSection = React.forwardRef<HTMLDivElement>((_props, ref) => { // Ca
       <h2 className={styles.mainTitle}>Proyecto Principal: Estud-IA</h2>
       <div className={styles.topContainer}>
         <div className={styles.videoContainer}>
-          <div className={styles.videoPlaceholder}>
-            <span className={styles.playIcon}>▶</span>
-          </div>
+          <VideoPlayer url="https://www.youtube.com/watch?v=1l5BqZ94bSU" />
         </div>
         <div className={styles.descriptionContainer}>
           <h3>El Origen de la Idea</h3>
           <p>
             Estud-IA nació de la necesidad de optimizar mi propio flujo de estudio. 
-            Tras dedicar aproximadamente 4 meses de desarrollo, logré consolidar una 
+            Logré consolidar una 
             herramienta que no solo me ayuda a mí, sino que tiene el potencial de 
             transformar la manera en que otros estudiantes interactúan con el material académico.
           </p>
@@ -31,10 +31,18 @@ const ProjectSection = React.forwardRef<HTMLDivElement>((_props, ref) => { // Ca
           <p>
             El proyecto ataca directamente la sobrecarga de información y la falta de 
             herramientas interactivas para el aprendizaje, utilizando IA para generar 
-            resúmenes, cuestionarios y mapas conceptuales de forma automática.
+            resúmenes, modelos de parcial y organizar toda la información académica en un solo lugar.
           </p>
         </div>
       </div>
+      <a 
+        href="https://www.estud-ia.com.ar/"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={styles.mainProjectLink}
+      >
+        <FaLink /> Link al proyecto
+      </a>
       <div className={styles.bottomContainer}>
         <h3 className={styles.techTitle}>Stack Tecnológico Utilizado</h3>
         {techSkills.map((category) => (

@@ -1,28 +1,35 @@
-// src/components/Navbar/Navbar.tsx (VERSIÓN DINÁMICA)
-
-import React from 'react';
-// 1. Importamos Link y el hook useLocation de React Router
+import React, { useState, useEffect } from 'react'; // Necesitamos estos hooks
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
-// 2. Importamos los dos iconos que necesitaremos
-import { FaArrowLeft, FaHome } from 'react-icons/fa';
+import { FaArrowLeft, FaHome, FaUser } from 'react-icons/fa';
 
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
-  // 3. Obtenemos la información de la ruta actual
   const location = useLocation();
-  // 4. Creamos una variable booleana para saber si estamos en la página "about"
   const isOnAboutPage = location.pathname === '/about';
 
-  const currentTime = "12:00";
-  const currentTemp = "20°";
+  // --- ESTADO PARA LA HORA ---
+  const [currentTime, setCurrentTime] = useState(new Date());
 
+  // --- EFECTO PARA ACTUALIZAR LA HORA ---
+  useEffect(() => {
+    // Creamos un intervalo que se ejecuta cada segundo
+    const timerId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Limpieza del intervalo para evitar fugas de memoria
+    return () => {
+      clearInterval(timerId);
+    };
+  }, []); // El array vacío asegura que el efecto se ejecute solo una vez al montar
+
+  // --- RENDERIZADO ---
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLeft}>
         {
-          // 5. Usamos un operador ternario para mostrar contenido condicional
           isOnAboutPage ? (
             // --- ESTO SE MUESTRA SI ESTAMOS EN /about ---
             <>
@@ -38,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             // --- ESTO SE MUESTRA EN CUALQUIER OTRA PÁGINA ---
             <>
               <Link to="/about" className={styles.navLink}>
-                <span className={styles.navIcon}>👤</span>
+                <FaUser className={styles.navIcon} />
               </Link>
               <FaArrowLeft className={styles.hintArrow} />
               <span className={styles.hintText}>
@@ -50,9 +57,8 @@ const Navbar: React.FC<NavbarProps> = () => {
       </div>
 
       <div className={styles.navbarInfo}>
-        <span>{currentTime}</span>
-        <span>/</span>
-        <span>{currentTemp}</span>
+        {/* Usamos el estado para mostrar la hora formateada */}
+        <span>{currentTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
       </div>
     </nav>
   );
